@@ -12,6 +12,10 @@
 #'   \item{region}{name of the region}
 #' }
 #' @keywords datasets
+#' @examples
+#' data(baltimore_map)
+#' ggplot(baltimore_map, aes(x = long, y = lat, group = group)) +
+#'  geom_path()
 "baltimore_map"
 
 

@@ -20,4 +20,9 @@ baltimore_map
 A dataset consisting of shapefiles describing the neighborhoods of Baltimore.
 The shapefiles of the neighborhoods is available from the Baltimore City Open GIS Data \url{http://gis-baltimore.opendata.arcgis.com/}
 }
+\examples{
+data(baltimore_map)
+ggplot(baltimore_map, aes(x = long, y = lat, group = group)) +
+ geom_path()
+}
 \keyword{datasets}
