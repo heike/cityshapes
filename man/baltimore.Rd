@@ -20,4 +20,13 @@ baltimore
 A dataset with demographic information for each of Baltimore's neighborhoods.
 The data is available from the Baltimore City Open GIS Data \url{http://gis-baltimore.opendata.arcgis.com/}.
 }
+\examples{
+data(baltimore_map)
+data(baltimore)
+baltimore_map <- dplyr::left_join(baltimore_map, baltimore, by="OBJECTID")
+ggplot(baltimore_map, aes(x = long, y = lat, group = group)) +
+ geom_polygon(aes(fill = Population))
+ggplot(baltimore_map, aes(x = long, y = lat, group = group)) +
+ geom_polygon(aes(fill = Blk_AfAm/Population*100))
+}
 \keyword{datasets}

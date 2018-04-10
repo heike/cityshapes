@@ -33,4 +33,12 @@
 #'   \item{...}{lots more}
 #' }
 #' @keywords datasets
+#' @examples
+#' data(baltimore_map)
+#' data(baltimore)
+#' baltimore_map <- dplyr::left_join(baltimore_map, baltimore, by="OBJECTID")
+#' ggplot(baltimore_map, aes(x = long, y = lat, group = group)) +
+#'  geom_polygon(aes(fill = Population))
+#' ggplot(baltimore_map, aes(x = long, y = lat, group = group)) +
+#'  geom_polygon(aes(fill = Blk_AfAm/Population*100))
 "baltimore"
